@@ -48,7 +48,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="CodeConnect.RemoteInstrumentation\CodeConnect.RemoteInstrumentation.csproj">
+    <ProjectReference Include="..\CodeConnect.RemoteInstrumentation\CodeConnect.RemoteInstrumentation.csproj">
       <Project>{21155adb-e032-485c-b11e-66b0037a2355}</Project>
       <Name>CodeConnect.RemoteInstrumentation</Name>
     </ProjectReference>

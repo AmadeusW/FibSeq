@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppDomainHost", "AppDomainH
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeConnect.RemoteRunner", "SharedInterface\CodeConnect.RemoteRunner.csproj", "{35BF6F32-1CD3-4B10-B7C7-C429EC987D74}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeConnect.RemoteInstrumentation", "CodeConnect.RemoteInstrumentation\CodeConnect.RemoteInstrumentation.csproj", "{21155ADB-E032-485C-B11E-66B0037A2355}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeConnect.RemoteInstrumentation", "..\CodeConnect.RemoteInstrumentation\CodeConnect.RemoteInstrumentation.csproj", "{21155ADB-E032-485C-B11E-66B0037A2355}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
