@@ -19,7 +19,7 @@ namespace AppDomainHost
             var handle = NewAppDomain.CreateInstanceFrom(@"..\..\..\SharedInterface\bin\Debug\CodeConnect.RemoteRunner.dll", "CodeConnect.RemoteRunner.Invoker");
             Invoker remoteInstance = (Invoker)handle.Unwrap();
 
-            List<string> logs = remoteInstance.RunMethod(@"..\..\..\bin\Debug\AppDomainCommunication.exe", "PrivateObject", "privateMethod", BindingFlags.NonPublic | BindingFlags.Instance);
+            List<string> logs = remoteInstance.RunMethod(@"..\..\..\bin\Debug\AppDomainCommunication.exe", "AppDomainCommunication.______Instrumentation", "AppDomainCommunication.PrivateObject", "privateMethod", BindingFlags.NonPublic | BindingFlags.Instance);
             foreach (string log in logs)
             {
                 Console.WriteLine(log);

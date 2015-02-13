@@ -8,12 +8,13 @@ namespace CodeConnect.RemoteRunner
     {
         // An intermediate step that needs better description (TODO)
         // params: "AppDomainCommunication", "PrivateObject", "privateMethod", BindingFlags.NonPublic | BindingFlags.Instance
-        public List<String> RunMethod(string assembly, string targetType, string targetMethod, BindingFlags targetMethodFlags)
+        public List<String> RunMethod(string assembly, string instrumentationType, string targetType, string targetMethod, BindingFlags targetMethodFlags)
         {
-            Assembly targetAssembly = Assembly.Load(assembly);
-            Type instrumentationType = targetAssembly.GetType("______Instrumentation");
-            MethodInfo instrumentationMethod = instrumentationType.GetMethod("RunClientCode", BindingFlags.Public | BindingFlags.Instance);
-            object results = instrumentationMethod.Invoke(instrumentationType, new object[] { targetType, targetMethod, targetMethodFlags });
+            //Assembly targetAssembly = Assembly.Load(assembly);
+            Assembly targetAssembly = Assembly.LoadFrom(assembly);
+            Type instrumentation = targetAssembly.GetType(instrumentationType);
+            MethodInfo instrumentationMethod = instrumentation.GetMethod("RunClientCode", BindingFlags.Public | BindingFlags.Instance);
+            object results = instrumentationMethod.Invoke(Activator.CreateInstance(instrumentation), new object[] { targetType, targetMethod, targetMethodFlags });
             return results as List<String>;
         }
     }
